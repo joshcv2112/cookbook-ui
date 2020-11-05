@@ -1,14 +1,13 @@
 .mainApp {
     font-size: 16px;
-    /* Maybe take this font below out? I don't like it */
-    /* font-family: 'Open Sans'; */
+    font-family: 'Open Sans';
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
 }
 
-.body {
+body {
     color: black;
     background-color: white;
     margin: 0;
@@ -27,8 +26,7 @@
     background: #6649b8;
 }
 
-main {
-    /* this is the width on the left for the sidebar */
+.main {
     margin-left: 5rem;
     padding: 1rem;
 }
