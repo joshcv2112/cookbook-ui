@@ -1,16 +1,14 @@
-import './App.css';
-import NavBar from './Components/NavBar';
-
-// For the UI I'm taking inspiration from here: https://www.osleague.tools/#/
+import './Style/style.css';
+import BodyContent from './Components/BodyContent';
+// import NavBar from './Components/NavBar';
 
 function App() {
   return (
     <div className="mainApp">
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="test">
-        <p>some text</p>
+        <BodyContent/>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
