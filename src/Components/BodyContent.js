@@ -1,14 +1,14 @@
 import React from 'react';
 import '../Style/style.css';
-
-// trying this library now
 import { GiKnifeFork } from 'react-icons/gi';
-import { BiBook, BiBookHeart } from 'react-icons/bi';
+import { BiBook, BiBookHeart, BiSearch } from 'react-icons/bi';
 import { FiSettings } from 'react-icons/fi';
 import { BsCardChecklist } from 'react-icons/bs';
 
 class BodyContent extends React.Component {
     render() {
+        var logoSize = 45;
+        var iconSize = 25;
         return(
             <div>                
                 <nav className='navbar'>
@@ -16,37 +16,45 @@ class BodyContent extends React.Component {
                         <li className="logo">
                             <a href="#" className="nav-link">
                             <span className="link-text logo-text">Recipes</span>
-                            <GiKnifeFork size={40} />
+                            <GiKnifeFork size={logoSize} />
                             </a>
                         </li>
 
                         <li className="nav-item">
                             <a href="#" className="nav-link">
-                            <BiBook size={35}/>
+                            <BiBook size={iconSize}/>
                             <span className="link-text">Cookbook</span>
                             </a>
                         </li>
 
                         <li className="nav-item">
                             <a href="#" className="nav-link">
-                            <BiBookHeart size={35} />
+                            <BiBookHeart size={iconSize} />
                             <span className="link-text">Favorites</span>
                             </a>
                         </li>
 
                         <li className="nav-item">
                             <a href="#" className="nav-link">
-                            <BsCardChecklist size={35} />
+                            <BsCardChecklist size={iconSize} />
                             <span className="link-text">Pantry Items</span>
                             </a>
                         </li>
 
                         <li className="nav-item" id="themeButton">
                             <a href="#" className="nav-link">
-                            <FiSettings size={35} />
+                            <BiSearch size={iconSize} />
+                            <span className="link-text">Search</span>
+                            </a>
+                        </li>
+
+                        <li className="nav-item" id="themeButton">
+                            <a href="#" className="nav-link">
+                            <FiSettings size={iconSize} />
                             <span className="link-text">Settings</span>
                             </a>
                         </li>
+
                     </ul>
                 </nav>
                 <div className='main'>
