@@ -37,7 +37,7 @@ class BodyContent extends React.Component {
                         <li className="nav-item">
                             <a href="#" className="nav-link">
                             <BsCardChecklist size={iconSize} />
-                            <span className="link-text">Pantry Items</span>
+                            <span className="link-text">Pantry</span>
                             </a>
                         </li>
 
