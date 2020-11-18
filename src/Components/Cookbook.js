@@ -1,14 +1,23 @@
 import React from 'react';
 import '../Style/style.css';
 
-class Cookbook extends React.Component {
-    render() {
-        return (
-            <div className='main'>
-                <h1>Cookbook</h1>
-            </div>
-        );
-    }
-}
+const Cookbook = ({contacts}) => {
+    return (
+        <div className="main">
+            <center>
+                <h1>Your Cookbook</h1>
+            </center>
+            {contacts.map((contact) => (
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{contact.name}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{contact.email}</h6>
+                        <p class="card-text">{contact.company.catchPhrase}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    )
+};
 
 export default Cookbook;

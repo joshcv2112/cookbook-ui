@@ -19,6 +19,20 @@ import Index from './Index';
 
 
 class BodyContent extends React.Component {
+    
+    state = {
+        contacts: []
+    };
+
+    componentDidMount() {
+        fetch('http://jsonplaceholder.typicode.com/users')
+            .then(res => res.json())
+            .then((data) => {
+                this.setState({ contacts: data })
+            })
+            .catch(console.log)
+    }
+
     render() {
         var logoSize = 45;
         var iconSize = 25;
@@ -92,7 +106,7 @@ class BodyContent extends React.Component {
                     
                     <Switch>
                         <Route path="/cookbook">
-                            <Cookbook />
+                            <Cookbook contacts={this.state.contacts} />
                         </Route>
                         <Route path="/favorites">
                             <Favorites />
