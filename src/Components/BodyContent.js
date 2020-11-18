@@ -29,67 +29,62 @@ class BodyContent extends React.Component {
                         <ul className='navbar-nav'>
                             <li className="logo">
                                 <Link to="/" style={{ textDecoration: 'none' }}>
-                                    <a href="#" className="nav-link">
+                                    <div className="nav-link">
                                         <span className="link-text logo-text">
                                             Recipes
                                         </span>
                                     <GiKnifeFork size={logoSize} />
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
-
                             <li className="nav-item">
                                 <Link to="/cookbook" style={{ textDecoration: 'none' }}>
-                                    <a href="#" className="nav-link">
+                                    <div className="nav-link">
                                         <BiBook size={iconSize}/>
                                         <span className="link-text">
                                             Cookbook
                                         </span>
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
-
                             <li className="nav-item">
                                 <Link to="/favorites" style={{ textDecoration: 'none' }}>
-                                    <a href="#" className="nav-link">
+                                    <div className="nav-link">
                                         <BiBookHeart size={iconSize}/>
                                         <span className="link-text">
                                             Favorites
                                         </span>
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
-
                             <li className="nav-item">
                                 <Link to="/pantry" style={{ textDecoration: 'none' }}>
-                                    <a href="#" className="nav-link">
+                                    <div className="nav-link">
                                         <BsCardChecklist size={iconSize}/>
                                         <span className="link-text">
                                             Pantry
                                         </span>
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
-
                             <li className="nav-item">
                                 <Link to="/search" style={{ textDecoration: 'none' }}>
-                                    <a href="#" className="nav-link">
+                                    <div className="nav-link">
                                         <BiSearch size={iconSize}/>
                                         <span className="link-text">
                                             Search
                                         </span>
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
-
                             <li className="nav-item" id="themeButton">
                                 <Link to="/settings" style={{ textDecoration: 'none' }}>
-                                    <a href="#" className="nav-link">
+                                    <div className="nav-link">
                                         <FiSettings size={iconSize}/>
                                         <span className="link-text">
                                             Settings
                                         </span>
-                                    </a>
+                                    </div>
                                 </Link>
                             </li>
                         </ul>
