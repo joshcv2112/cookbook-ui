@@ -20,17 +20,24 @@ import Index from './Index';
 
 class BodyContent extends React.Component {
     
-    state = {
-        contacts: []
-    };
+    // These two things probably belong in the child component. IDK best practice tho
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: false,
+            recipeData: []
+        };
+    }
 
-    componentDidMount() {
-        fetch('http://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({ contacts: data })
-            })
-            .catch(console.log)
+    // state = {
+    //     recipeData: null
+    // };
+
+    async componentDidMount() {
+        const url = '/api/recipes/';
+        const response = await fetch(url);
+        const data = await response.json();
+        this.setState({ recipeData: data, loading: true});
     }
 
     render() {
@@ -106,7 +113,7 @@ class BodyContent extends React.Component {
                     
                     <Switch>
                         <Route path="/cookbook">
-                            <Cookbook contacts={this.state.contacts} />
+                            <Cookbook recipeData={this.state.recipeData} loading={this.state.loading} />
                         </Route>
                         <Route path="/favorites">
                             <Favorites />
