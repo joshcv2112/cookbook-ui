@@ -17,6 +17,7 @@ import Search from './Search';
 import Settings from './Settings';
 import Index from './Index';
 
+import { COMPONENT_NAME } from 'react-bootstrap';
 
 class BodyContent extends React.Component {
     
@@ -28,10 +29,6 @@ class BodyContent extends React.Component {
             recipeData: []
         };
     }
-
-    // state = {
-    //     recipeData: null
-    // };
 
     async componentDidMount() {
         const url = '/api/recipes/';
