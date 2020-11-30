@@ -6,16 +6,21 @@ import RecipeCard from './RecipeCard';
 class Cookbook extends Component {
   render() {
     return(
-        <div className='main'>
-        { 
-          this.props.loading ?
-            (
-              this.props.recipeData.map(recipe => (
-                <RecipeCard recipe={recipe} />
-              ))
-            ) :
-            (<Loading />) 
-        }
+        <div>
+          <div>
+            
+          </div>
+          <div className='main'>
+          { 
+            this.props.loading ?
+              (
+                this.props.recipeData.map(recipe => (
+                  <RecipeCard recipe={recipe} />
+                ))
+              ) :
+              (<Loading />) 
+          }
+          </div>
         </div>
     );
   }
