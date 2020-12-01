@@ -19,10 +19,10 @@ class Cookbook extends Component {
           </div>
           <div className="container">
             <div className="one">
-              <button className="dropbtn">Cookbook 1</button>
+              <button className="dropbtn">Section 1</button>
             </div>
             <div className="two">
-              <button className="dropbtn">Cookbook 1</button>
+              <button className="dropbtn">Section 2</button>
             </div>
           </div>
         </div>
