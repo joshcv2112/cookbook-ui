@@ -17,6 +17,14 @@ class Cookbook extends Component {
               <a>Cookbook 3</a>
             </div>
           </div>
+          <div className="container">
+            <div className="one">
+              <button className="dropbtn">Cookbook 1</button>
+            </div>
+            <div className="two">
+              <button className="dropbtn">Cookbook 1</button>
+            </div>
+          </div>
         </div>
         <div className='main-cookbook'>
           <h2>Recipe</h2>

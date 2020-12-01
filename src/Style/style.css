@@ -65,7 +65,7 @@ body {
 
 .sidebar-title-container {
   height: 92px;
-  border-bottom: 3px solid rgb(221, 227, 227);
+  border-bottom: 1px solid rgb(221, 227, 227);
   text-align: center;
 }
 
@@ -83,6 +83,7 @@ body {
 .dropdown {
   position: relative;
   display: inline-block;
+  border-bottom: 1px solid rgb(221, 227, 227);
 }
 
 .dropdown-content {
@@ -113,3 +114,23 @@ body {
   background-color: #ededed;
 }
 /* END - Cookbook Dropdown Selector */
+
+/* START - Section | Recipe sub side bar thing */
+.container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.one {
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.two {
+  margin-left: 40%;
+  height: 100%;
+  border-left: 1px solid rgb(221, 227, 227);
+}
+/* START - Section | Recipe sub side bar thing */
