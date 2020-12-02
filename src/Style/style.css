@@ -64,7 +64,7 @@ body {
 }
 
 .sidebar-title-container {
-  height: 92px;
+  height: 105px;
   border-bottom: 1px solid rgb(221, 227, 227);
   text-align: center;
 }
@@ -133,4 +133,40 @@ body {
   height: 100%;
   border-left: 1px solid rgb(221, 227, 227);
 }
-/* START - Section | Recipe sub side bar thing */
+/* END - Section | Recipe sub side bar thing */
+
+/* START - Section | Recipe content area */
+.recipe-icon-area {
+  height: 52px;
+  margin: 0px;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+
+.recipe-icon {
+  padding: 10px;
+  color: #977535;
+  font-size: 18px;
+}
+
+.recipe-path-area {
+  height: 33px;
+  margin: 0px;
+  padding-left: 30px;
+  font-size: 12px;
+}
+
+.asdf {
+  background-color: #e9e7df;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 10px;
+  height: 15px;
+  font: arial;
+  color: #4d4d4d;
+}
+
+.recipe-content-area {
+}
+/* END - Section | Recipe content area */
