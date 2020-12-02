@@ -1,6 +1,61 @@
-/* Sidebar Icons */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Main Div that encapsulates pretty much everything*/
+.index {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.column1 {
+  width: 100%;
+  background-color: #a1edcc;
+}
+.everything-not-navbar {
+  width: 100%;
+  margin-left: 58px;
+  display: flex;
+  flex-direction: row;
+}
+.column2 {
+  width: 100%;
+  background-color: #a0e9ed;
+}
+.column3 {
+  width: 100%;
+  background-color: #f497f1;
+}
+
+.sidebar {
+  height: 100%;
+  width: 58px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #333333;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 10px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #dde2e3;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/*
 body {
   font-family: 'Lato', sans-serif;
 }
@@ -30,7 +85,7 @@ body {
 }
 
 .main {
-  margin-left: 58px; /* Same as the width of the sidenav */
+  margin-left: 58px; 
   padding: 0px 10px;
 }
 
@@ -43,7 +98,6 @@ body {
   }
 }
 
-/* This is the second, wider sidebar in the cookbook screen */
 .test {
   z-index: 4;
   display: flex;
@@ -57,7 +111,6 @@ body {
   width: 360px;
 }
 
-/* Main region of the cookbook page (where recipes are displayed) */
 .main-cookbook {
   margin-left: 418px;
   padding: 0px 10px;
@@ -69,7 +122,6 @@ body {
   text-align: center;
 }
 
-/* START - Cookbook Dropdown Selector */
 .dropbtn {
   background-color: #fafafa;
   color: black;
@@ -113,9 +165,7 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #ededed;
 }
-/* END - Cookbook Dropdown Selector */
 
-/* START - Section | Recipe sub side bar thing */
 .container {
   width: 100%;
   height: 100%;
@@ -133,9 +183,7 @@ body {
   height: 100%;
   border-left: 1px solid rgb(221, 227, 227);
 }
-/* END - Section | Recipe sub side bar thing */
 
-/* START - Section | Recipe content area */
 .recipe-icon-area {
   height: 52px;
   margin: 0px;
@@ -170,4 +218,15 @@ body {
 
 .recipe-content-area {
 }
-/* END - Section | Recipe content area */
+
+*/
+
+/* GET RID OF THIS ONE?
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}*/

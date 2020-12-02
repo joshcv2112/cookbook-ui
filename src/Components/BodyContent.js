@@ -35,55 +35,65 @@ class BodyContent extends React.Component {
 
     render() {
         return(
-            <Router>
-                <div>
-                    <div className="sidenav">
-                        <div className="sidebar">
-                            <Link to="/" style={{ textDecoration: 'none' }}>
-                                <p></p>
-                            </Link>
-                            <Link to="/" style={{ textDecoration: 'none' }}>
-                                <i className="fa fa-fw fa-home"></i>
-                            </Link>
-                            <Link to="/cookbook" style={{ textDecoration: 'none' }}>
-                                <i className="fa fa-fw fa-book"></i>
-                            </Link>
-                            <Link to="/favorites" style={{ textDecoration: 'none' }}>
-                                <i className="fa fa-fw fa-heart"></i>
-                            </Link>
-                            <Link to="/pantry" style={{ textDecoration: 'none' }}>
-                                <i className="fa fa-fw fa-shopping-basket"></i>
-                            </Link>
-                            <Link to="/search" style={{ textDecoration: 'none' }}>
-                                <i className="fa fa-fw fa-search"></i>
-                            </Link>
-                            <Link to="/settings" style={{ textDecoration: 'none' }}>
-                                <i className="fa fa-fw fa-cog"></i>
-                            </Link>
+            <div className="index">
+                <Router>
+                    <div className="sidebar">
+                        <div className="sidenav">
+                            <div className="">
+                                <Link to="/" style={{ textDecoration: 'none' }}>
+                                    <p></p>
+                                </Link>
+                                <Link to="/" style={{ textDecoration: 'none' }}>
+                                    <i className="fa fa-fw fa-home"></i>
+                                </Link>
+                                <Link to="/cookbook" style={{ textDecoration: 'none' }}>
+                                    <i className="fa fa-fw fa-book"></i>
+                                </Link>
+                                <Link to="/favorites" style={{ textDecoration: 'none' }}>
+                                    <i className="fa fa-fw fa-heart"></i>
+                                </Link>
+                                <Link to="/pantry" style={{ textDecoration: 'none' }}>
+                                    <i className="fa fa-fw fa-shopping-basket"></i>
+                                </Link>
+                                <Link to="/search" style={{ textDecoration: 'none' }}>
+                                    <i className="fa fa-fw fa-search"></i>
+                                </Link>
+                                <Link to="/settings" style={{ textDecoration: 'none' }}>
+                                    <i className="fa fa-fw fa-cog"></i>
+                                </Link>
+                            </div>
                         </div>
                     </div>
+                    {/* <Switch>
+                        <Route path="/cookbook">
+                            <Cookbook recipeData={this.state.recipeData} loading={this.state.loading} />
+                        </Route>
+                        <Route path="/favorites">
+                            <Favorites />
+                        </Route>
+                        <Route path="/pantry">
+                            <Pantry />
+                        </Route>
+                        <Route path="/search">
+                            <Search />
+                        </Route>
+                        <Route path="/settings">
+                            <Settings />
+                        </Route>
+                        <Route path="/">
+                            <Index />
+                        </Route>
+                    </Switch> */}
+                </Router>
+                <div className="everything-not-navbar">
+                    <div className="column2">
+                        <h2>Recipe Selection Area</h2> 
+                    </div>
+                    <div className="column3">
+                        <h2>Recipe Content</h2> 
+                    </div>
                 </div>
-                <Switch>
-                    <Route path="/cookbook">
-                        <Cookbook recipeData={this.state.recipeData} loading={this.state.loading} />
-                    </Route>
-                    <Route path="/favorites">
-                        <Favorites />
-                    </Route>
-                    <Route path="/pantry">
-                        <Pantry />
-                    </Route>
-                    <Route path="/search">
-                        <Search />
-                    </Route>
-                    <Route path="/settings">
-                        <Settings />
-                    </Route>
-                    <Route path="/">
-                        <Index />
-                    </Route>
-                    </Switch>
-            </Router>
+            </div>
         );
     }
 }
