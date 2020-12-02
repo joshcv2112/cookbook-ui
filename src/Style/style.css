@@ -1,167 +1,172 @@
-@import url('//fonts.googleapis.com/css?family=Open+Sans');
-
-.mainApp {
-  font-size: 16px;
-  font-family: 'Open sans';
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --transition-speed: 600ms;
-}
+/* Sidebar Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
-  color: black;
-  background-color: white;
-  margin: 0;
-  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-::-webkit-scrollbar-track {
-  background: #1e1e24;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #6649b8;
-}
-
-.navbar {
+.sidebar {
+  height: 100%;
+  width: 58px;
   position: fixed;
-  background-color: var(--bg-primary);
-  transition: width 200ms ease;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #333333;
+  overflow-x: hidden;
+  padding-top: 16px;
 }
 
-.navbar-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.sidebar a {
+  padding: 10px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #dde2e3;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 58px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+/* This is the second, wider sidebar in the cookbook screen */
+.test {
+  z-index: 4;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: rgb(250, 250, 250);
+  position: fixed;
+  top: 0px;
+  left: 57.6px;
   height: 100%;
+  border-right: 3px solid rgb(221, 227, 227);
+  width: 360px;
 }
 
-.nav-item {
-  width: 100%;
+/* Main region of the cookbook page (where recipes are displayed) */
+.main-cookbook {
+  margin-left: 418px;
+  padding: 0px 10px;
 }
 
-.nav-item:last-child {
-  margin-top: auto;
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  height: 5rem;
-  color: var(--text-primary);
-  text-decoration: none;
-  filter: grayscale(100%) opacity(0.7);
-  transition: var(--transition-speed);
-}
-
-.nav-link:hover {
-  filter: grayscale(0%) opacity(1);
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-}
-
-.link-text {
-  display: none;
-  margin-left: 1rem;
-}
-
-.nav-link svg {
-  min-width: 2rem;
-  margin: 0 1.5rem;
-}
-
-.fa-primary {
-  color: #83af9b;
-}
-
-.fa-secondary {
-  color: #effab4;
-}
-
-.fa-primary,
-.fa-secondary {
-  transition: var(--transition-speed);
-}
-
-.logo {
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+.sidebar-title-container {
+  height: 105px;
+  border-bottom: 1px solid rgb(221, 227, 227);
   text-align: center;
-  color: var(--text-secondary);
-  background: var(--bg-secondary);
-  font-size: 1.5rem;
-  letter-spacing: 0.3ch;
+}
+
+/* START - Cookbook Dropdown Selector */
+.dropbtn {
+  background-color: #fafafa;
+  color: black;
+  text-align: left;
+  font-size: 16px;
+  border: none;
   width: 100%;
+  height: 37px;
 }
 
-.logo svg {
-  transform: rotate(0deg);
-  transition: transform var(--transition-speed);
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px solid rgb(221, 227, 227);
 }
 
-.navbar:hover .logo svg {
-  transform: rotate(-90deg);
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-/* Small screens */
-@media only screen and (max-width: 600px) {
-  .main {
-    margin-left: 0.75rem;
-    padding: 1rem;
-  }
-
-  .navbar {
-    bottom: 0;
-    width: 100vw;
-    height: 5rem;
-  }
-
-  .logo {
-    display: none;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  .nav-link {
-    justify-content: center;
-  }
-
-  main {
-    margin: 0;
-  }
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-/* Large screens */
-@media only screen and (min-width: 600px) {
-  .main {
-    margin-left: 5rem;
-    padding: 1rem;
-  }
-
-  .navbar {
-    top: 0;
-    width: 5rem;
-    height: 100vh;
-  }
-
-  .navbar:hover {
-    width: 16rem;
-  }
-
-  .navbar:hover .link-text {
-    display: inline;
-    transition: opacity var(--transition-speed);
-  }
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ededed;
+}
+/* END - Cookbook Dropdown Selector */
+
+/* START - Section | Recipe sub side bar thing */
+.container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.one {
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.two {
+  margin-left: 40%;
+  height: 100%;
+  border-left: 1px solid rgb(221, 227, 227);
+}
+/* END - Section | Recipe sub side bar thing */
+
+/* START - Section | Recipe content area */
+.recipe-icon-area {
+  height: 52px;
+  margin: 0px;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+
+.recipe-icon {
+  padding: 10px;
+  color: #977535;
+  font-size: 18px;
+}
+
+.recipe-path-area {
+  height: 33px;
+  margin: 0px;
+  padding-left: 30px;
+  font-size: 12px;
+}
+
+.asdf {
+  background-color: #e9e7df;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 10px;
+  height: 15px;
+  font: arial;
+  color: #4d4d4d;
+}
+
+.recipe-content-area {
+}
+/* END - Section | Recipe content area */
