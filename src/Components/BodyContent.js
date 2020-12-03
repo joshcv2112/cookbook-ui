@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Style/style.css';
+import '../Style/bodyContentStyle.css';
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,11 +13,7 @@ import Search from './Search';
 import Settings from './Settings';
 import Index from './Index';
 
-
-
 class BodyContent extends React.Component {
-    
-    // These two things probably belong in the child component. IDK best practice tho
     constructor(props) {
         super(props);
         this.state = {
@@ -64,35 +60,29 @@ class BodyContent extends React.Component {
                             </div>
                         </div>
                     </div>
-                    {/* <Switch>
-                        <Route path="/cookbook">
-                            <Cookbook recipeData={this.state.recipeData} loading={this.state.loading} />
-                        </Route>
-                        <Route path="/favorites">
-                            <Favorites />
-                        </Route>
-                        <Route path="/pantry">
-                            <Pantry />
-                        </Route>
-                        <Route path="/search">
-                            <Search />
-                        </Route>
-                        <Route path="/settings">
-                            <Settings />
-                        </Route>
-                        <Route path="/">
-                            <Index />
-                        </Route>
-                    </Switch> */}
+                    <div className="page-content">
+                        <Switch>
+                            <Route path="/cookbook">
+                                <Cookbook recipeData={this.state.recipeData} loading={this.state.loading} />
+                            </Route>
+                            <Route path="/favorites">
+                                <Favorites />
+                            </Route>
+                            <Route path="/pantry">
+                                <Pantry />
+                            </Route>
+                            <Route path="/search">
+                                <Search />
+                            </Route>
+                            <Route path="/settings">
+                                <Settings />
+                            </Route>
+                            <Route path="/">
+                                <Index />
+                            </Route>
+                        </Switch>
+                    </div>
                 </Router>
-                <div className="everything-not-navbar">
-                    <div className="column2">
-                        <h2>Recipe Selection Area</h2> 
-                    </div>
-                    <div className="column3">
-                        <h2>Recipe Content</h2> 
-                    </div>
-                </div>
             </div>
         );
     }
