@@ -101,8 +101,8 @@ body {
 
 .z {
   margin-left: 1rem;
-  margin-right: 5rem;
-  width: 90%;
+  margin-right: 4rem;
+  width: 80%;
   max-width: 800px;
 }
 
@@ -127,7 +127,7 @@ body {
 .recipe-icon-area {
   height: 52px;
   margin: 0px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .recipe-icon {
@@ -195,12 +195,25 @@ body {
   }
 }
 
-/* GET RID OF THIS ONE?
-@media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-  .sidebar a {
-    font-size: 18px;
-  }
-}*/
+h1.recipe-title {
+  -webkit-font-smoothing: antialiased;
+  font-family: Lora, Georgia, serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: inherit;
+  border-bottom: 1px solid rgb(221, 227, 227);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+p.recipe-description {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.563rem;
+  font-style: italic;
+  margin: 0px auto;
+  padding: 0.25em 1em 8px 0px;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.45;
+}

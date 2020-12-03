@@ -44,7 +44,8 @@ class Cookbook extends Component {
               <span className="recipe-icon">+</span>
             </div>
             <div className="recipe-content-area">
-              <h3>Thai Grilled Chicken Wings</h3>
+              <h1 className="recipe-title">Thai Grilled Chicken Wings</h1>
+              <p className="recipe-description">The tangy dipping sauce is great with pretty much any grilled meat. Keep it on heavy rotation this summer.</p>
             </div>
           </div>
         </div>
