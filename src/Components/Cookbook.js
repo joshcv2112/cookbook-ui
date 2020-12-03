@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../Style/style.css';
+import '../Style/cookbookStyle.css';
 
 class Cookbook extends Component {
   render() {
     return(
-      <div>
+      <div className="parent">
         <div className='test'>
           <div className='sidebar-title-container'>
             <h2>Cookbook</h2>
@@ -26,25 +26,26 @@ class Cookbook extends Component {
             </div>
           </div>
         </div>
-        <div className="main-cookbook">
-          <div className="recipe-icon-area">
-            <span className="recipe-icon"><i className="fa fa-pencil" aria-hidden="true"></i></span>
-            <span className="recipe-icon"><i className="fa fa-cart-plus" aria-hidden="true"></i></span>
-            <span className="recipe-icon"><i className="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
-            <span className="recipe-icon"><i className="fa fa-expand" aria-hidden="true"></i></span>
-            <span className="recipe-icon"><i className="fa fa-balance-scale" aria-hidden="true"></i></span>
-            <span className="recipe-icon"><i className="fa fa-share-alt" aria-hidden="true"></i></span>
-            <span className="recipe-icon"><i className="fa fa-print" aria-hidden="true"></i></span>
-            <span className="recipe-icon"><i className="fa fa-trash" aria-hidden="true"></i></span>
-            <span className="recipe-icon"><i className="fa fa-ellipsis-v" aria-hidden="true"></i></span>
-          </div>
-          <div className="recipe-path-area">
-            <span className="asdf">First Cookbook / First Section</span>
-            <span className="recipe-icon">+</span>
-          </div>
-          <div className="recipe-content-area">
-            <h3>Recipe Content</h3>
-            <div>Icons made by <a href="https://www.flaticon.com">FlatIcon</a>.</div>
+        <div className="y">
+          <div className="z">
+            <div className="recipe-icon-area">
+              <span className="recipe-icon"><i className="fa fa-pencil" aria-hidden="true"></i></span>
+              <span className="recipe-icon"><i className="fa fa-cart-plus" aria-hidden="true"></i></span>
+              <span className="recipe-icon"><i className="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
+              <span className="recipe-icon"><i className="fa fa-expand" aria-hidden="true"></i></span>
+              <span className="recipe-icon"><i className="fa fa-balance-scale" aria-hidden="true"></i></span>
+              <span className="recipe-icon"><i className="fa fa-share-alt" aria-hidden="true"></i></span>
+              <span className="recipe-icon"><i className="fa fa-print" aria-hidden="true"></i></span>
+              <span className="recipe-icon"><i className="fa fa-trash" aria-hidden="true"></i></span>
+              <span className="recipe-icon"><i className="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+            </div>
+            <div className="recipe-path-area">
+              <span className="recipe-path">First Cookbook / First Section</span>
+              <span className="recipe-icon">+</span>
+            </div>
+            <div className="recipe-content-area">
+              <h3>Thai Grilled Chicken Wings</h3>
+            </div>
           </div>
         </div>
       </div>

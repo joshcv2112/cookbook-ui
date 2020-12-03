@@ -1,4 +1,3 @@
-import './Style/style.css';
 import BodyContent from './Components/BodyContent';
 
 function App() {

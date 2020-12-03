@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Style/style.css';
 
 class Favorites extends React.Component {
     render() {

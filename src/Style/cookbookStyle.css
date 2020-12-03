@@ -1,49 +1,9 @@
-/* Sidebar Icons */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
   font-family: 'Lato', sans-serif;
 }
 
-.sidebar {
-  height: 100%;
-  width: 58px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #333333;
-  overflow-x: hidden;
-  padding-top: 16px;
-}
-
-.sidebar a {
-  padding: 10px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #dde2e3;
-  display: block;
-}
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 58px; /* Same as the width of the sidenav */
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-  .sidebar a {
-    font-size: 18px;
-  }
-}
-
-/* This is the second, wider sidebar in the cookbook screen */
 .test {
   z-index: 4;
   display: flex;
@@ -57,19 +17,18 @@ body {
   width: 360px;
 }
 
-/* Main region of the cookbook page (where recipes are displayed) */
-.main-cookbook {
-  margin-left: 418px;
-  padding: 0px 10px;
-}
-
 .sidebar-title-container {
   height: 105px;
   border-bottom: 1px solid rgb(221, 227, 227);
   text-align: center;
 }
 
-/* START - Cookbook Dropdown Selector */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px solid rgb(221, 227, 227);
+}
+
 .dropbtn {
   background-color: #fafafa;
   color: black;
@@ -78,12 +37,6 @@ body {
   border: none;
   width: 100%;
   height: 37px;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px solid rgb(221, 227, 227);
 }
 
 .dropdown-content {
@@ -113,9 +66,7 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #ededed;
 }
-/* END - Cookbook Dropdown Selector */
 
-/* START - Section | Recipe sub side bar thing */
 .container {
   width: 100%;
   height: 100%;
@@ -133,13 +84,49 @@ body {
   height: 100%;
   border-left: 1px solid rgb(221, 227, 227);
 }
-/* END - Section | Recipe sub side bar thing */
 
-/* START - Section | Recipe content area */
+.parent {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.y {
+  margin-left: 362px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.z {
+  margin-left: 1rem;
+  margin-right: 5rem;
+  width: 90%;
+  max-width: 800px;
+}
+
+.main-cookbook {
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.main-cookbook {
+  margin-left: 418px;
+  padding: 0px 10px;
+}
+
 .recipe-icon-area {
   height: 52px;
   margin: 0px;
-  padding-left: 25px;
   padding-top: 10px;
 }
 
@@ -152,11 +139,10 @@ body {
 .recipe-path-area {
   height: 33px;
   margin: 0px;
-  padding-left: 32px;
   font-size: 12px;
 }
 
-.asdf {
+.recipe-path {
   background-color: #e9e7df;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -170,4 +156,51 @@ body {
 
 .recipe-content-area {
 }
-/* END - Section | Recipe content area */
+
+.sidebar {
+  height: 100%;
+  width: 58px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #333333;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 10px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #dde2e3;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 58px;
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+/* GET RID OF THIS ONE?
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}*/

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Style/style.css';
 
 class Pantry extends React.Component {
     render() {
