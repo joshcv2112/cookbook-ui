@@ -46,6 +46,21 @@ class Cookbook extends Component {
             <div className="recipe-content-area">
               <h1 className="recipe-title">Thai Grilled Chicken Wings</h1>
               <p className="recipe-description">The tangy dipping sauce is great with pretty much any grilled meat. Keep it on heavy rotation this summer.</p>
+              <div className="rating">
+                <span className="fa fa-star rating-star"></span>
+                <span className="fa fa-star rating-star"></span>
+                <span className="fa fa-star rating-star"></span>
+                <span className="fa fa-star rating-star"></span>
+                <span className="fa fa-star-o rating-star"></span>
+              </div>
+              <img className="recipe-image" src="https://mysaffronappgc.imgix.net/1600060538618-SUGZYMWGa.jpg?max-h=800&max-w=1600&fit=crop&auto=compress&ixlib=js-2.3.1&s=ad3752bb81ee377c15c37da76d42cc03"/>
+              <div>
+                <a href="https://www.google.com" className="author-name">
+                  <b><p>Kris Yenbamroong</p></b>
+                </a>
+                <p>4 Servings</p>
+                <button>Add Note</button>
+              </div>
             </div>
           </div>
         </div>
