@@ -54,12 +54,16 @@ class Cookbook extends Component {
                 <span className="fa fa-star-o rating-star"></span>
               </div>
               <img className="recipe-image" src="https://mysaffronappgc.imgix.net/1600060538618-SUGZYMWGa.jpg?max-h=800&max-w=1600&fit=crop&auto=compress&ixlib=js-2.3.1&s=ad3752bb81ee377c15c37da76d42cc03"/>
-              <div>
-                <a href="https://www.google.com" className="author-name">
-                  <b><p>Kris Yenbamroong</p></b>
-                </a>
-                <p>4 Servings</p>
-                <button>Add Note</button>
+              <div className="author-servings-notes-region">
+                <div className="asnr-child">
+                  <div className="author-name-container">
+                    <a href="https://www.google.com" className="author-name"><b>Kris Yenbamroong</b></a>
+                  </div>
+                  <div className="servings-label">4 Servings</div>
+                </div>
+                <div className="asnr-child">
+                  <button className="add-note-button">Add Note</button>
+                </div>
               </div>
             </div>
           </div>

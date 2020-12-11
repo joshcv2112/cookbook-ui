@@ -188,6 +188,45 @@ a:visited {
   padding-top: 16px;
 }
 
+.author-servings-notes-region {
+  display: flex;
+}
+
+.asnr-child {
+  flex: 1;
+}
+
+.asnr-child:first-child {
+  margin-right: 20px;
+}
+
+.author-name-container {
+  padding-top: 10px;
+}
+
+.servings-label {
+  padding-top: 7px;
+}
+
+.add-note-button {
+  float: right;
+  background-color: rgb(102, 102, 102);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.add-note-button:hover {
+  background-color: rgb(135, 135, 135);
+  color: white;
+}
+
 .sidebar a {
   padding: 10px 8px 6px 16px;
   text-decoration: none;
