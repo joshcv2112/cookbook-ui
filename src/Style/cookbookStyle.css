@@ -97,6 +97,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fafafa;
 }
 
 .z {
@@ -225,6 +226,34 @@ a:visited {
 .add-note-button:hover {
   background-color: rgb(135, 135, 135);
   color: white;
+}
+
+.recipe-directions-region {
+  display: flex;
+  margin-top: 40px;
+}
+
+.ingredients {
+  flex: 1;
+}
+
+.ingredient {
+  padding-bottom: 13px;
+}
+
+.directions {
+  align-items: center;
+  width: 65%;
+  margin-left: 44px;
+  padding-left: 14px;
+}
+
+.direction {
+  line-height: 1.563;
+}
+
+p {
+  margin-top: 0px;
 }
 
 .sidebar a {
