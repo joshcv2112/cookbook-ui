@@ -97,6 +97,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fafafa;
 }
 
 .z {
@@ -137,9 +138,10 @@ body {
 }
 
 .recipe-path-area {
-  height: 33px;
+  height: 32px;
   margin: 0px;
   font-size: 12px;
+  padding-left: 5px;
 }
 
 .recipe-path {
@@ -154,7 +156,25 @@ body {
   color: #4d4d4d;
 }
 
-.recipe-content-area {
+.recipe-image {
+  width: 100%; /* you can use % */
+  height: auto;
+}
+
+.rating {
+  padding-bottom: 20px;
+}
+
+.rating-star {
+  padding-left: 5px;
+}
+
+.author-name {
+  color: rgb(68, 68, 68);
+}
+
+a:visited {
+  color: rgb(102, 102, 102);
 }
 
 .sidebar {
@@ -167,6 +187,73 @@ body {
   background-color: #333333;
   overflow-x: hidden;
   padding-top: 16px;
+}
+
+.author-servings-notes-region {
+  display: flex;
+}
+
+.asnr-child {
+  flex: 1;
+}
+
+.asnr-child:first-child {
+  margin-right: 20px;
+}
+
+.author-name-container {
+  padding-top: 10px;
+}
+
+.servings-label {
+  padding-top: 7px;
+}
+
+.add-note-button {
+  float: right;
+  background-color: rgb(102, 102, 102);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.add-note-button:hover {
+  background-color: rgb(135, 135, 135);
+  color: white;
+}
+
+.recipe-directions-region {
+  display: flex;
+  margin-top: 40px;
+}
+
+.ingredients {
+  flex: 1;
+}
+
+.ingredient {
+  padding-bottom: 13px;
+}
+
+.directions {
+  align-items: center;
+  width: 65%;
+  margin-left: 44px;
+  padding-left: 14px;
+}
+
+.direction {
+  line-height: 1.563;
+}
+
+p {
+  margin-top: 0px;
 }
 
 .sidebar a {
@@ -209,7 +296,7 @@ h1.recipe-title {
 
 p.recipe-description {
   font-family: Lora, Georgia, serif;
-  font-size: 1.563rem;
+  font-size: 1.4rem;
   font-style: italic;
   margin: 0px auto;
   padding: 0.25em 1em 8px 0px;
