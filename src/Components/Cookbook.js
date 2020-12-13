@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CookbookSelector from './CookbookSelector';
 import '../Style/cookbookStyle.css';
 
 class Cookbook extends Component {
@@ -9,14 +10,15 @@ class Cookbook extends Component {
           <div className='sidebar-title-container'>
             <h2>Cookbook</h2>
           </div>
-          <div className="dropdown">
+          <CookbookSelector />
+          {/* <div className="dropdown">
             <button className="dropbtn">Cookbook 1</button>
             <div className="dropdown-content">
               <a>Cookbook 1</a>
               <a>Cookbook 2</a>
               <a>Cookbook 3</a>
             </div>
-          </div>
+          </div> */}
           <div className="container">
             <div className="one">
               <button className="dropbtn">Section 1</button>
