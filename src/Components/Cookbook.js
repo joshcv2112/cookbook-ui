@@ -11,20 +11,14 @@ class Cookbook extends Component {
             <h2>Cookbook</h2>
           </div>
           <CookbookSelector />
-          {/* <div className="dropdown">
-            <button className="dropbtn">Cookbook 1</button>
-            <div className="dropdown-content">
-              <a>Cookbook 1</a>
-              <a>Cookbook 2</a>
-              <a>Cookbook 3</a>
-            </div>
-          </div> */}
           <div className="container">
             <div className="one">
-              <button className="dropbtn">Section 1</button>
+              <button className="dropbtn-selected">First Section</button>
+              <button className="dropbtn">Another Section</button>
+              <div className="add-section-button">Add Section</div>
             </div>
             <div className="two">
-              <button className="dropbtn">Section 2</button>
+              <button className="dropbtn-selected">Section 2</button>
             </div>
           </div>
         </div>
