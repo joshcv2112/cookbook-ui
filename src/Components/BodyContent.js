@@ -6,7 +6,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import Cookbook from './Cookbook';
+import Cookbook from './Cookbook/Cookbook';
 import Favorites from './Favorites';
 import Pantry from './Pantry';
 import Search from './Search';

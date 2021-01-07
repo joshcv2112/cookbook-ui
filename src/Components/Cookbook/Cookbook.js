@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CookbookSelector from './CookbookSelector';
-import '../Style/cookbookStyle.css';
+import '../../Style/cookbookStyle.css';
 
 class Cookbook extends Component {
   render() {

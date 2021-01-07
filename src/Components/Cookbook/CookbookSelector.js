@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dropdown, Menu } from 'semantic-ui-react';
-import '../Style/cookbookStyle.css';
+import '../../Style/cookbookStyle.css';
 
 class CookbookSelector extends React.Component {
     render() {
