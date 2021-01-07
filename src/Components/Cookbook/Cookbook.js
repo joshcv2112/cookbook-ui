@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../Style/cookbookStyle.css';
-import CookbookSelector from './CookbookSelector';
 import RecipeArea from './RecipeArea';
 import CookbookSidebar from './CookbookSidebar';
 
