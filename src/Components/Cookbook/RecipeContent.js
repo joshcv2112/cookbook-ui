@@ -14,7 +14,7 @@ class RecipeContent extends React.Component {
                 <span className="fa fa-star rating-star"></span>
                 <span className="fa fa-star-o rating-star"></span>
               </div>
-              <img className="recipe-image" src="https://mysaffronappgc.imgix.net/1600060538618-SUGZYMWGa.jpg?max-h=800&max-w=1600&fit=crop&auto=compress&ixlib=js-2.3.1&s=ad3752bb81ee377c15c37da76d42cc03"/>
+              <img className="recipe-image" src="https://mysaffronappgc.imgix.net/1600060538618-SUGZYMWGa.jpg?max-h=800&max-w=1600&fit=crop&auto=compress&ixlib=js-2.3.1&s=ad3752bb81ee377c15c37da76d42cc03" alt="recipeImage"/>
               <div className="author-servings-notes-region">
                 <div className="asnr-child">
                   <div className="author-name-container">

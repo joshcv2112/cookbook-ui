@@ -13,29 +13,18 @@ class CookbookSelector extends React.Component {
         const url = '/api/cookbooks/';
         const response = await fetch(url);
         const data = await response.json();
-        
-        // console.log(data[0].cookbookName);
 
         var i;
         var cookbooks = [];
         for (i = 0; i < data.length; i++) {
-            cookbooks.push([{key: i+1, text: data[i].cookbookName, value: 1}]);
+            cookbooks.push({key: i+1, text: data[i].cookbookName, value: 1});
         }
-
-        console.log(cookbooks);
-        
         this.setState({ options: cookbooks, loading: false });
       }
 
       
 
     render() {
-        const options = [
-            { key: 1, text: 'Cookbook 1', value: 1 },
-            { key: 2, text: 'Cookbook 2', value: 2 },
-            { key: 3, text: 'Cookbook 3', value: 3 },
-          ]
-
         return (
             <Menu id="thing">
                 <Dropdown text='Cookbooks' options={this.state.options} simple item />
