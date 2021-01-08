@@ -25,19 +25,19 @@ class CookbookSelector extends React.Component {
         this.setState({ options: cookbooks, loading: false });
       }
 
-      setCurrentCookbook = (event, {value}) => {
-          this.setState({currentCookbook: value});
-      }      
+    //   setCurrentCookbook = (event, {value}) => {
+    //       this.setState({currentCookbook: value});
+    //   }      
 
     render() {
         return (
             <Dropdown
                 id="thing"
-                placeholder='Select Cookbook'
+                placeholder={this.props.defaultCookbook}
                 fluid
                 selection
-                options={this.state.options}
-                onChange={this.setCurrentCookbook}
+                options={this.props.cookbookData}
+                onChange={this.props.setCurrentCookbook}
                 
             />
         );
