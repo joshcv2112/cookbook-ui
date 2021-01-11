@@ -54,3 +54,9 @@ body {
 .sidebar a:hover {
   color: #f1f1f1;
 }
+
+/* this style makes the text color of the Cookbook dropdown selector not light grey. Leave this. */
+.ui.default.dropdown:not(.button) > .text,
+.ui.dropdown:not(.button) > .default.text {
+  color: rgba(0, 0, 0, 0.87) !important;
+}

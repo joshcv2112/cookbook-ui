@@ -1,12 +1,15 @@
 import React from 'react';
-import { Dropdown, Menu } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 import '../../Style/cookbookStyle.css';
 
 class CookbookSelector extends React.Component {
     
     constructor(props) {
         super(props);
-        this.state = { recipeData: null, loading: true , options: [{key: 1, text: 'Loading...', value: 1}]};
+        this.state = { recipeData: null,
+                       loading: true ,
+                       options: [{key: 1, text: 'Loading...', value: 1}],
+                       currentCookbook: null};
       }
 
       async componentDidMount() {
@@ -17,18 +20,26 @@ class CookbookSelector extends React.Component {
         var i;
         var cookbooks = [];
         for (i = 0; i < data.length; i++) {
-            cookbooks.push({key: i+1, text: data[i].cookbookName, value: 1});
+            cookbooks.push({key: data[i].cookbookId, text: data[i].cookbookName, value: data[i].cookbookName});
         }
         this.setState({ options: cookbooks, loading: false });
       }
 
-      
+    //   setCurrentCookbook = (event, {value}) => {
+    //       this.setState({currentCookbook: value});
+    //   }      
 
     render() {
         return (
-            <Menu id="thing">
-                <Dropdown text='Cookbooks' options={this.state.options} simple item />
-            </Menu>
+            <Dropdown
+                id="thing"
+                placeholder={this.props.defaultCookbook}
+                fluid
+                selection
+                options={this.props.cookbookData}
+                onChange={this.props.setCurrentCookbook}
+                
+            />
         );
     }
 }
