@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../Style/cookbookStyle.css';
-import CookbookSelection from './CookbookSelection';
 import CookbookSelector from './CookbookSelector';
 import CookbookTitle from './CookbookTitle';
 
@@ -38,7 +37,6 @@ class CookbookSidebar extends React.Component {
                     <div>
                         <CookbookTitle />
                         <CookbookSelector defaultCookbook={this.state.currentCookbook} cookbookData={this.state.cookbookData} setCookbook={this.setCurrentCookbook}/>
-                        <CookbookSelection />
                     </div>
                 }
             </div>

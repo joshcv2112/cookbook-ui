@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import '../../Style/cookbookStyle.css';
+import CookbookSelection from './CookbookSelection';
 
 class CookbookSelector extends React.Component {
     
@@ -25,21 +26,19 @@ class CookbookSelector extends React.Component {
         this.setState({ options: cookbooks, loading: false });
       }
 
-    //   setCurrentCookbook = (event, {value}) => {
-    //       this.setState({currentCookbook: value});
-    //   }      
-
     render() {
         return (
-            <Dropdown
-                id="thing"
-                placeholder={this.props.defaultCookbook}
-                fluid
-                selection
-                options={this.props.cookbookData}
-                onChange={this.props.setCurrentCookbook}
-                
-            />
+            <div>
+                <Dropdown
+                    id="thing"
+                    placeholder={this.props.defaultCookbook}
+                    fluid
+                    selection
+                    options={this.props.cookbookData}
+                    onChange={this.props.setCurrentCookbook}
+                />
+                <CookbookSelection />
+            </div>
         );
     }
 }
