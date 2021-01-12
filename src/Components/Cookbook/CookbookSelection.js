@@ -9,19 +9,19 @@ class CookbookSelection extends React.Component {
             sections: "Loading",
             selctedSection: 0,
             rawData: null,
-            loading: true
+            loading: true,
+            initial: this.props.cookbookId
         };
     }
 
     async componentDidMount()
     {
-        const url = '/api/sections/cookbook/1002';
+        const url = '/api/sections/cookbook/' + this.props.cookbookId;
         const response = await fetch(url);
         const data = await response.json();
 
-        var i;
         var sections = [];
-        for (i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
                 if (i === this.state.selctedSection)
                     sections.push({name: data[i].sectionName, style: "dropbtn-selected"});
                 else
@@ -30,15 +30,33 @@ class CookbookSelection extends React.Component {
         this.setState({ rawData: data, sections: sections, loading: false});
     }
 
-    // TODO: Could probably consolidate some of the code below with the code above, reduce duplication.
+    async updateCookbookData(id) {
+        const url = '/api/sections/cookbook/' + id;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        var sections = [];
+        for (let i = 0; i < data.length; i++) {
+                if (i === this.state.selctedSection)
+                    sections.push({name: data[i].sectionName, style: "dropbtn-selected"});
+                else
+                    sections.push({name: data[i].sectionName, style: "dropbtn"});
+        }
+        this.setState({ rawData: data, sections: sections, loading: false});
+    }
+
+    async componentDidUpdate(prevProps) {
+        if (prevProps.cookbookId !== this.props.cookbookId) {
+          await this.updateCookbookData(this.props.cookbookId);
+        }
+      }
+
     changeColor(name){
         this.setState({loading: true})
-        console.log(name);
         
-        var i;
         var data = this.state.rawData;
         var sections = [];
-        for (i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             if (name === data[i].sectionName)
                 sections.push({name: data[i].sectionName, style: "dropbtn-selected"});
             else
@@ -48,7 +66,7 @@ class CookbookSelection extends React.Component {
         this.setState({sections: sections, loading: false});
      }
 
-    setCurrentCookbook () {
+    renderCookbookSections () {
         return <div>
             {this.state.sections.map(section => (
                 <button className={section.style} key={section.name} onClick={this.changeColor.bind(this, section.name)}>{section.name}</button>
@@ -61,7 +79,7 @@ class CookbookSelection extends React.Component {
             <div className="container">
                 <div className="one">
                     {this.state.loading ? <button className="dropbtn-selected">Loading</button> : 
-                        this.setCurrentCookbook()}
+                        this.renderCookbookSections()}
                     <div className="add-section-button">Add Section</div>
                 </div>
                     <div className="two">
