@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../Style/cookbookStyle.css';
+import RecipeList from './RecipeList';
 
 class CookbookSelection extends React.Component {
     
@@ -82,12 +83,7 @@ class CookbookSelection extends React.Component {
                         this.renderCookbookSections()}
                     <div className="add-section-button">Add Section</div>
                 </div>
-                    <div className="two">
-                    <button className="dropbtn">Recipe 1</button>
-                    <button className="dropbtn-selected">Recipe 2</button>
-                    <button className="dropbtn">Recipe 3</button>
-                    <button className="dropbtn">Recipe 4</button>
-                </div>
+                <RecipeList />
             </div>
         );
     }
