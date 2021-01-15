@@ -3,21 +3,17 @@ import '../../Style/cookbookStyle.css';
 import RecipeList from './RecipeList';
 
 class CookbookSelection extends React.Component {
-    
     constructor(props) {
         super(props);
         this.state = {
             sections: "Loading",
             selctedSection: 0,
             rawData: null,
-            loading: true,
-            initial: this.props.cookbookId
+            loading: true
         };
     }
 
-    async componentDidMount()
-    {
-        const url = '/api/sections/cookbook/' + this.props.cookbookId;
+    async getRecipeData(url) {
         const response = await fetch(url);
         const data = await response.json();
 
@@ -31,46 +27,35 @@ class CookbookSelection extends React.Component {
         this.setState({ rawData: data, sections: sections, loading: false});
     }
 
-    async updateCookbookData(id) {
-        const url = '/api/sections/cookbook/' + id;
-        const response = await fetch(url);
-        const data = await response.json();
-
-        var sections = [];
-        for (let i = 0; i < data.length; i++) {
-                if (i === this.state.selctedSection)
-                    sections.push({name: data[i].sectionName, style: "dropbtn-selected"});
-                else
-                    sections.push({name: data[i].sectionName, style: "dropbtn"});
-        }
-        this.setState({ rawData: data, sections: sections, loading: false});
+    async componentDidMount() {
+        await this.getRecipeData('/api/sections/cookbook/' + this.props.cookbookId);
     }
 
     async componentDidUpdate(prevProps) {
         if (prevProps.cookbookId !== this.props.cookbookId) {
-          await this.updateCookbookData(this.props.cookbookId);
+          await this.getRecipeData('/api/sections/cookbook/' + this.props.cookbookId);
         }
       }
 
-    changeColor(name){
-        this.setState({loading: true})
-        
-        var data = this.state.rawData;
+    updateSectionListStyle(name) {
         var sections = [];
-        for (let i = 0; i < data.length; i++) {
-            if (name === data[i].sectionName)
-                sections.push({name: data[i].sectionName, style: "dropbtn-selected"});
+        for (let i = 0; i < this.state.rawData.length; i++) {
+            if (name === this.state.rawData[i].sectionName)
+                sections.push({name: this.state.rawData[i].sectionName, style: "dropbtn-selected"});
             else
-                sections.push({name: data[i].sectionName, style: "dropbtn"});
+                sections.push({name: this.state.rawData[i].sectionName, style: "dropbtn"});
         }
+        return sections;
+    }
 
-        this.setState({sections: sections, loading: false});
+    updateSectionStyle(name){
+        this.setState({sections: this.updateSectionListStyle(name), loading: false});
      }
 
     renderCookbookSections () {
         return <div>
             {this.state.sections.map(section => (
-                <button className={section.style} key={section.name} onClick={this.changeColor.bind(this, section.name)}>{section.name}</button>
+                <button className={section.style} key={section.name} onClick={this.updateSectionStyle.bind(this, section.name)}>{section.name}</button>
             ))}
           </div>;
     }  
