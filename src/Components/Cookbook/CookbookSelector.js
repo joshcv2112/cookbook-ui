@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import '../../Style/cookbookStyle.css';
-import CookbookSelection from './CookbookSelection';
+import SectionSelection from './SectionSelection';
 
 class CookbookSelector extends React.Component {
     
@@ -48,7 +48,7 @@ class CookbookSelector extends React.Component {
                         this.setCurrentCookbook(value)
                       }}
                 />
-                {this.state.cookbookId === null ? <h3>loading</h3> : <CookbookSelection cookbookId={this.state.currentCookbookId}/>}
+                {this.state.cookbookId === null ? <h3>loading</h3> : <SectionSelection cookbookId={this.state.currentCookbookId}/>}
                 </div>
                 }
             </div>

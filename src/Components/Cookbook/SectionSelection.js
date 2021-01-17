@@ -2,7 +2,7 @@ import React from 'react';
 import '../../Style/cookbookStyle.css';
 import RecipeList from './RecipeList';
 
-class CookbookSelection extends React.Component {
+class SectionSelection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -74,4 +74,4 @@ class CookbookSelection extends React.Component {
     }
 }
 
-export default CookbookSelection;
+export default SectionSelection;
