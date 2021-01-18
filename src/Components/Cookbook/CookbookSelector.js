@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import '../../Style/cookbookStyle.css';
+import SectionSelection from './SectionSelector';
 
 class CookbookSelector extends React.Component {
     
@@ -9,7 +10,7 @@ class CookbookSelector extends React.Component {
         this.state = { recipeData: null,
                        loading: true ,
                        options: [{key: 1, text: 'Loading...', value: 1}],
-                       currentCookbook: null};
+                       currentCookbookId: null};
       }
 
       async componentDidMount() {
@@ -17,29 +18,40 @@ class CookbookSelector extends React.Component {
         const response = await fetch(url);
         const data = await response.json();
 
-        var i;
         var cookbooks = [];
-        for (i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             cookbooks.push({key: data[i].cookbookId, text: data[i].cookbookName, value: data[i].cookbookName});
         }
-        this.setState({ options: cookbooks, loading: false });
+        this.setState({ options: cookbooks, loading: false, currentCookbookId: cookbooks[0].key});
       }
 
-    //   setCurrentCookbook = (event, {value}) => {
-    //       this.setState({currentCookbook: value});
-    //   }      
+    setCurrentCookbook(value){
+        for (let i = 0; i < this.state.options.length; i++)
+        {
+            if (this.state.options[i].text === value)
+                this.setState({currentCookbookId: this.state.options[i].key});
+        }
+    }
 
     render() {
         return (
-            <Dropdown
-                id="thing"
-                placeholder={this.props.defaultCookbook}
-                fluid
-                selection
-                options={this.props.cookbookData}
-                onChange={this.props.setCurrentCookbook}
-                
-            />
+            <div>
+                { this.state.loading ? <h1>loading...</h1> : 
+                <div>
+                <Dropdown
+                    id="thing"
+                    placeholder={this.props.defaultCookbook}
+                    fluid
+                    selection
+                    options={this.props.cookbookData}
+                    onChange={(e, { value }) => {
+                        this.setCurrentCookbook(value)
+                      }}
+                />
+                {this.state.cookbookId === null ? <h3>loading</h3> : <SectionSelection cookbookId={this.state.currentCookbookId}/>}
+                </div>
+                }
+            </div>
         );
     }
 }

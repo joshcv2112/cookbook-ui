@@ -30,10 +30,11 @@ body {
   text-align: left;
   padding-left: 15px;
   font-size: 0.8rem;
-  border: none;
   border-radius: 0px;
   width: 100%;
   height: 37px;
+  border: none;
+  outline: none;
 }
 .dropbtn {
   background-color: #fafafa;
@@ -42,6 +43,7 @@ body {
   padding-left: 15px;
   font-size: 0.8rem;
   border: none;
+  outline: none;
   border-radius: 0px;
   width: 100%;
   height: 37px;
