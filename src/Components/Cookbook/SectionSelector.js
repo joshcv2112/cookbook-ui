@@ -7,7 +7,7 @@ class SectionSelector extends React.Component {
         super(props);
         this.state = {
             sections: null,
-            selctedSection: 0,
+            selectedSectionId: 0,
             rawData: null,
             loading: true
         };
@@ -16,10 +16,9 @@ class SectionSelector extends React.Component {
     async getSectionData(url) {
         const response = await fetch(url);
         const data = await response.json();
-
         var sections = [];
         for (let i = 0; i < data.length; i++) {
-                if (i === this.state.selctedSection)
+                if (i === this.state.selectedSectionId)
                     sections.push({name: data[i].sectionName, style: "dropbtn-selected"});
                 else
                     sections.push({name: data[i].sectionName, style: "dropbtn"});
@@ -27,22 +26,23 @@ class SectionSelector extends React.Component {
         this.setState({ rawData: data, sections: sections, loading: false});
     }
 
-    // Is this even necessary??
     async componentDidMount() {
         await this.getSectionData('/api/sections/cookbook/' + this.props.cookbookId);
     }
 
     async componentDidUpdate(prevProps) {
         if (prevProps.cookbookId !== this.props.cookbookId) {
-          await this.getSectionData('/api/sections/cookbook/' + this.props.cookbookId);
+            await this.getSectionData('/api/sections/cookbook/' + this.props.cookbookId);
         }
-      }
+    }
 
     updateSectionListStyle(name) {
         var sections = [];
         for (let i = 0; i < this.state.rawData.length; i++) {
-            if (name === this.state.rawData[i].sectionName)
+            if (name === this.state.rawData[i].sectionName) {
+                this.setState({selectedSectionId: this.state.rawData[i].sectionId});
                 sections.push({name: this.state.rawData[i].sectionName, style: "dropbtn-selected"});
+            }
             else
                 sections.push({name: this.state.rawData[i].sectionName, style: "dropbtn"});
         }
@@ -69,7 +69,7 @@ class SectionSelector extends React.Component {
                         this.renderCookbookSections()}
                     <div className="add-section-button">Add Section</div>
                 </div>
-                <RecipeList selectedSection={this.state.selectedSection}/>
+                {this.state.loading ? <h1>loading</h1> : <RecipeList selectedSectionId={this.state.selectedSectionId}/>}
             </div>
         );
     }

@@ -6,17 +6,17 @@ class RecipeSelector extends React.Component {
         super(props);
 
         this.state = {
-            selectedRecipeNum : 1,
+            selectedRecipeNum : 0,
             loading: true,
             rawData: null,
-            recipes: null
+            recipes: null,
+            sectionId: 0
         };
     }
 
     async getRecipeData(url) {
         const response = await fetch(url);
         const data = await response.json();
-
         var recipes = [];
         for (let i = 0; i < data.length; i++) {
             if (i === this.state.selectedRecipeNum)
@@ -24,12 +24,21 @@ class RecipeSelector extends React.Component {
             else
                 recipes.push({name: data[i].title, style: "dropbtn"});
         }
-
         this.setState({loading: false, recipes: recipes, rawData: data})
     }
 
     async componentDidMount() {
-        await this.getRecipeData('/api/recipes/section/' + this.state.selectedRecipeNum);
+        // Un-Hard code this
+        //await this.getRecipeData('/api/recipes/section/' + 1);
+        await this.getRecipeData('/api/recipes/section/' + this.props.selectedSectionId);
+    }
+
+    async componentDidUpdate(prevProps) {
+        console.log(prevProps.selectedSectionId);
+        console.log(this.props.selectedSectionId);
+        if (prevProps.selectedSectionId !== this.props.selectedSectionId) {
+            await this.getRecipeData('api/recipes/section/' + this.props.selectedSectionId);
+        }
     }
 
     updateRecipeListStyle(name) {
