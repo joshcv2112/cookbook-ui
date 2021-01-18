@@ -1,19 +1,19 @@
 import React from 'react';
 import '../../Style/cookbookStyle.css';
-import RecipeList from './RecipeList';
+import RecipeList from './RecipeSelector';
 
-class SectionSelection extends React.Component {
+class SectionSelector extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sections: "Loading",
+            sections: null,
             selctedSection: 0,
             rawData: null,
             loading: true
         };
     }
 
-    async getRecipeData(url) {
+    async getSectionData(url) {
         const response = await fetch(url);
         const data = await response.json();
 
@@ -27,13 +27,14 @@ class SectionSelection extends React.Component {
         this.setState({ rawData: data, sections: sections, loading: false});
     }
 
+    // Is this even necessary??
     async componentDidMount() {
-        await this.getRecipeData('/api/sections/cookbook/' + this.props.cookbookId);
+        await this.getSectionData('/api/sections/cookbook/' + this.props.cookbookId);
     }
 
     async componentDidUpdate(prevProps) {
         if (prevProps.cookbookId !== this.props.cookbookId) {
-          await this.getRecipeData('/api/sections/cookbook/' + this.props.cookbookId);
+          await this.getSectionData('/api/sections/cookbook/' + this.props.cookbookId);
         }
       }
 
@@ -68,10 +69,10 @@ class SectionSelection extends React.Component {
                         this.renderCookbookSections()}
                     <div className="add-section-button">Add Section</div>
                 </div>
-                <RecipeList />
+                <RecipeList selectedSection={this.state.selectedSection}/>
             </div>
         );
     }
 }
 
-export default SectionSelection;
+export default SectionSelector;
