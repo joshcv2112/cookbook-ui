@@ -7,6 +7,7 @@ class SectionSelector extends React.Component {
         super(props);
         this.state = {
             loading: true,
+            selectedSectionIndex: 0
         };
     }
 
@@ -14,13 +15,17 @@ class SectionSelector extends React.Component {
         const response = await fetch(url);
         const data = await response.json();
         var sections = [];
+        var id;
         for (let i = 0; i < data.length; i++) {
-            if (i === this.state.selectedSectionId)
+            if (i === this.state.selectedSectionIndex)
+            {
                 sections.push({name: data[i].sectionName, style: "dropbtn-selected"});
+                id = data[i].sectionId;
+            }
             else
                 sections.push({name: data[i].sectionName, style: "dropbtn"});
         }
-        this.setState({ rawData: data, sections: sections, loading: false});
+        this.setState({ rawData: data, sections: sections, loading: false, selectedSectionId: id });
     }
 
     async componentDidMount() {
@@ -62,10 +67,10 @@ class SectionSelector extends React.Component {
         return (
             <div className="container">
                 <div className="one">
-                    {this.state.loading ? <p>loading</p> : this.renderCookbookSections()}
-                    <div className="add-section-button">Add Recipe</div>
+                    {this.state.loading ? <div></div> : this.renderCookbookSections()}
+                    <div className="add-section-button">Add Section</div>
                 </div>
-                {this.state.loading ? <h1>loading</h1> : <RecipeList selectedSectionId={this.state.selectedSectionId}/>}
+                {this.state.loading ? <div></div> : <RecipeList selectedSectionId={this.state.selectedSectionId}/>}
             </div>
         );
     }

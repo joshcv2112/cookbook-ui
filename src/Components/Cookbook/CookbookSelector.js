@@ -37,7 +37,7 @@ class CookbookSelector extends React.Component {
     render() {
         return (
             <div>
-                { this.state.loading ? <h1>loading...</h1> : 
+                { this.state.loading ? <div></div> : 
                 <div>
                 <Dropdown
                     id="thing"
