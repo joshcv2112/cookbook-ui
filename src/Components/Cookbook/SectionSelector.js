@@ -63,6 +63,7 @@ class SectionSelector extends React.Component {
             <div className="container">
                 <div className="one">
                     {this.state.loading ? <p>loading</p> : this.renderCookbookSections()}
+                    <div className="add-section-button">Add Recipe</div>
                 </div>
                 {this.state.loading ? <h1>loading</h1> : <RecipeList selectedSectionId={this.state.selectedSectionId}/>}
             </div>
