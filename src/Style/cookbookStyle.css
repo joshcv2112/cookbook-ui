@@ -69,12 +69,15 @@ body {
   width: 40%;
   height: 100%;
   float: left;
+  border-top: 1px solid #dde3e3;
+  border-right: 1px solid #dde3e3;
 }
 
 .two {
   margin-left: 40%;
   height: 100%;
   border-left: 1px solid #dde3e3;
+  border-top: 1px solid #dde3e3;
 }
 
 .parent {

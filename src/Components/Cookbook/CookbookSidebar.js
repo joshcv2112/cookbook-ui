@@ -7,36 +7,19 @@ class CookbookSidebar extends React.Component {
     
     constructor(props) {
         super(props);
-        this.state = { recipeData: null,
-                       loading: true ,
-                       cookbookData: [{key: 1, text: 'Loading...', value: 1}],
-                       currentCookbook: null};
-    }
-
-    async componentDidMount() {
-        const url = '/api/cookbooks/';
-        const response = await fetch(url);
-        const data = await response.json();
-
-        var i;
-        var cookbooks = [];
-        for (i = 0; i < data.length; i++) {
-            cookbooks.push({key: data[i].cookbookId, text: data[i].cookbookName, value: data[i].cookbookName});
-        }
-        this.setState({ currentCookbook: data[0].cookbookName, cookbookData: cookbooks, loading: false });
-    }
-    
-    setCurrentCookbook = (event, {value}) => {
-        this.setState({currentCookbook: value});
+        this.state = { loading: false,
+                       cookbookData: [{key: 1, text: '', value: 1}],
+                       currentCookbook: null,
+                       allCookbookData: null};
     }
 
     render() {
         return (
             <div className='test'>
-                {this.state.loading ?  <h1>LOADING</h1> :
+                {this.state.loading ?  <div></div> :
                     <div>
                         <CookbookTitle />
-                        <CookbookSelector defaultCookbook={this.state.currentCookbook} cookbookData={this.state.cookbookData} setCookbook={this.setCurrentCookbook}/>
+                        <CookbookSelector />
                     </div>
                 }
             </div>
