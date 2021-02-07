@@ -28,9 +28,7 @@ class RecipeSelector extends React.Component {
     }
 
     async componentDidMount() {
-        // Un-Hard code this
-        await this.getRecipeData('/api/recipes/section/' + 1002);
-        //await this.getRecipeData('/api/recipes/section/' + this.props.selectedSectionId);
+        await this.getRecipeData('/api/recipes/section/' + this.props.selectedSectionId);
     }
 
     async componentDidUpdate(prevProps) {
