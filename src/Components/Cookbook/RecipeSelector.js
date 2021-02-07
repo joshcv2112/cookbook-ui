@@ -29,13 +29,11 @@ class RecipeSelector extends React.Component {
 
     async componentDidMount() {
         // Un-Hard code this
-        //await this.getRecipeData('/api/recipes/section/' + 1);
-        await this.getRecipeData('/api/recipes/section/' + this.props.selectedSectionId);
+        await this.getRecipeData('/api/recipes/section/' + 1002);
+        //await this.getRecipeData('/api/recipes/section/' + this.props.selectedSectionId);
     }
 
     async componentDidUpdate(prevProps) {
-        console.log(prevProps.selectedSectionId);
-        console.log(this.props.selectedSectionId);
         if (prevProps.selectedSectionId !== this.props.selectedSectionId) {
             await this.getRecipeData('api/recipes/section/' + this.props.selectedSectionId);
         }

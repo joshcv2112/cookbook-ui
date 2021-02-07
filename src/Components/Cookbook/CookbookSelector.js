@@ -7,13 +7,14 @@ class CookbookSelector extends React.Component {
     
     constructor(props) {
         super(props);
-        this.state = { recipeData: null,
-                       loading: true ,
+        this.state = { loading: true ,
+                       defaultCookbook: null,
                        options: [{key: 1, text: 'Loading...', value: 1}],
-                       currentCookbookId: null};
+                       currentCookbook: null,
+                       name: "def"};
       }
 
-      async componentDidMount() {
+    async componentDidMount() {
         const url = '/api/cookbooks/';
         const response = await fetch(url);
         const data = await response.json();
@@ -22,14 +23,14 @@ class CookbookSelector extends React.Component {
         for (let i = 0; i < data.length; i++) {
             cookbooks.push({key: data[i].cookbookId, text: data[i].cookbookName, value: data[i].cookbookName});
         }
-        this.setState({ options: cookbooks, loading: false, currentCookbookId: cookbooks[0].key});
-      }
+        this.setState({ defaultCookbook: data[0].cookbookName, options: cookbooks, loading: false, currentCookbookId: cookbooks[0].key});
+    }
 
     setCurrentCookbook(value){
         for (let i = 0; i < this.state.options.length; i++)
         {
             if (this.state.options[i].text === value)
-                this.setState({currentCookbookId: this.state.options[i].key});
+                this.setState({currentCookbookId: this.state.options[i].key, name: value});
         }
     }
 
@@ -40,15 +41,15 @@ class CookbookSelector extends React.Component {
                 <div>
                 <Dropdown
                     id="thing"
-                    placeholder={this.props.defaultCookbook}
+                    placeholder={this.state.defaultCookbook}
                     fluid
                     selection
-                    options={this.props.cookbookData}
+                    options={this.state.options}
                     onChange={(e, { value }) => {
                         this.setCurrentCookbook(value)
                       }}
                 />
-                {this.state.cookbookId === null ? <h3>loading</h3> : <SectionSelection cookbookId={this.state.currentCookbookId}/>}
+                {this.state.cookbookId === null ? <h3>loading</h3> : <SectionSelection cookbookId={this.state.currentCookbookId} name={this.state.name}/>}
                 </div>
                 }
             </div>
