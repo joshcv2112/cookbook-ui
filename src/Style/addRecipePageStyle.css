@@ -4,7 +4,7 @@
   padding-right: 26px;
   padding-left: 26px;
   padding-top: 21px;
-  position: relative;
+  height: 100%;
 }
 
 .sidebar-header {
@@ -179,10 +179,7 @@
   text-rendering: optimizelegibility;
   height: 100%;
   width: 100%;
-  margin-top: 50px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  margin-top: 60px;
 }
 .cancel-button {
   outline: none;
@@ -203,6 +200,10 @@
   box-sizing: border-box;
   margin-right: 14px;
 }
+.cancel-button:hover {
+  background-color: #444444;
+  color: white;
+}
 .save-button {
   outline: none;
   padding: 8px 1.6em;
@@ -220,4 +221,8 @@
   border: 1px solid rgb(130, 64, 39);
   color: rgb(255, 255, 255);
   box-sizing: border-box;
+}
+.save-button:hover {
+  background-color: #531410;
+  color: white;
 }

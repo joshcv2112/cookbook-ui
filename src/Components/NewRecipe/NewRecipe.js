@@ -62,7 +62,7 @@ class NewRecipe extends Component {
                         <div><input className="input2" /></div>
                     </div>
                 </div>
-                <div className="button-container">
+                <div className="button-container4">
                     <button className="cancel-button">CANCEL</button>
                     <button className="save-button">SAVE RECIPE</button>
                 </div>
