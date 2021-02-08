@@ -12,6 +12,7 @@ import Pantry from './Pantry';
 import Search from './Search';
 import Settings from './Settings';
 import Index from './Index';
+import NewRecipe from './NewRecipe/NewRecipe';
 
 class BodyContent extends React.Component {
     constructor(props) {
@@ -76,6 +77,9 @@ class BodyContent extends React.Component {
                             </Route>
                             <Route path="/settings">
                                 <Settings />
+                            </Route>
+                            <Route path="/new-recipe">
+                                <NewRecipe />
                             </Route>
                             <Route path="/">
                                 <Index />
