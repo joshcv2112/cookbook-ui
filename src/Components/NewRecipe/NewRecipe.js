@@ -5,7 +5,6 @@ import CookbookTitle from '../Cookbook/CookbookTitle';
 import RecipePreview from './RecipePreview';
 
 class NewRecipe extends Component {
-  
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +12,8 @@ class NewRecipe extends Component {
             recipeDescription: "",
             recipeSource: "",
             recipeUrl: "",
-            recipeYield: ""
+            recipeYield: "",
+            recipeIngredients: []
         };
 
         this.updateTitle = this.updateTitle.bind(this);
@@ -21,6 +21,8 @@ class NewRecipe extends Component {
         this.updateSource = this.updateSource.bind(this);
         this.updateUrl = this.updateUrl.bind(this);
         this.updateYield = this.updateYield.bind(this);
+
+        this.addIngredients = this.addIngredients.bind(this);
     }    
 
     updateTitle(e) { this.setState({recipeTitle: e.target.value}); }
@@ -28,6 +30,12 @@ class NewRecipe extends Component {
     updateSource(e) { this.setState({recipeSource: e.target.value}); }
     updateUrl(e) { this.setState({recipeUrl: e.target.value}); }
     updateYield(e) { this.setState({recipeYield: e.target.value}); }
+
+    addIngredients(e) { 
+        // Of course this will come from a pop up dialog later on...
+        let ingredients = ["6 dried chiles de árbol","1/3 cup fish sauce","1 tablespoon fresh lime juice","1 tablespoon toasted sesame seeds","2 teaspoons sugar","1/2 cup oyster sauce","1/2 cup Thai thin soy sauce","2 tablespoons sugar","2 tablespoons vegetable oil","2 teaspoons freshly ground black pepper","2 pounds chicken wings, tips removed, drumettes and flats separated","A spice mill or a mortar and pestle; twelve 8\" bamboo skewers soaked in water at least 1 hour"];
+        this.setState({recipeIngredients: ingredients}) 
+    }
 
     render() {
         return(
@@ -48,7 +56,7 @@ class NewRecipe extends Component {
                             </div>
                         </div>
                         <div className="button-container2">
-                            <button className="button3">ADD INGREDIENTS</button>
+                            <button className="button3" onClick={this.addIngredients}>ADD INGREDIENTS</button>
                         </div>
                         <div className="button-container2">
                             <button className="button3">ADD STEPS</button>
@@ -85,7 +93,9 @@ class NewRecipe extends Component {
                         </div>
                     </div>
                 </div>
-                <RecipePreview title={this.state.recipeTitle} description={this.state.recipeDescription} source={this.state.recipeSource} url={this.state.recipeUrl} yield={this.state.recipeYield} />
+                <RecipePreview title={this.state.recipeTitle} description={this.state.recipeDescription}
+                               source={this.state.recipeSource} url={this.state.recipeUrl} yield={this.state.recipeYield}
+                               ingredients={this.state.recipeIngredients} />
             </div>
         );
   }

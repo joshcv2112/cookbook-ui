@@ -9,6 +9,11 @@ class RecipePreview extends Component {
             <div className="z">
                 <h1>{this.props.title}</h1>
                 <p>{this.props.description}</p>
+                <ul>
+                {this.props.ingredients.map((ingredient, index) => (
+                        <li>{ingredient}</li>
+                    ))}
+                </ul>
                 <p>{this.props.source}</p>
                 <p>{this.props.url}</p>
                 <p>{this.props.yield}</p>
