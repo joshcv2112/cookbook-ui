@@ -82,6 +82,11 @@ html {
   border-top: 1px solid #dde3e3;
 }
 
+.index {
+  height: 100vh;
+  background-color: #fafafa;
+}
+
 .parent {
   width: 100%;
   margin: auto;

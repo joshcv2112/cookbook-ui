@@ -52,7 +52,7 @@ class NewRecipe extends Component {
 
     render() {
         return(
-            <div className="parent">
+            <div className="parent2">
                 <div className='test'>
                     <CookbookTitle />
                     <div className='sidebar-container'>
