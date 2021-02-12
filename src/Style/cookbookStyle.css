@@ -1,7 +1,9 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-body {
+body,
+html {
   font-family: 'Lato', sans-serif;
+  height: 100%;
 }
 
 .test {
@@ -18,7 +20,7 @@ body {
 }
 
 .sidebar-title-container {
-  height: 105px;
+  height: 94px;
   border-bottom: 1px solid #dde3e3;
   text-align: center;
   padding-top: 15px;
@@ -80,14 +82,19 @@ body {
   border-top: 1px solid #dde3e3;
 }
 
+.index {
+  height: 100vh;
+  background-color: #fafafa;
+}
+
 .parent {
   width: 100%;
-  height: 100%;
   margin: auto;
 }
 
 .y {
   margin-left: 362px;
+  position: relative;
   height: 100%;
   display: flex;
   justify-content: center;
