@@ -13,21 +13,11 @@ import Search from './Search';
 import Settings from './Settings';
 import Index from './Index';
 import NewRecipe from './NewRecipe/NewRecipe';
+import { findAllByAltText } from '@testing-library/react';
 
 class BodyContent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            loading: false,
-            recipeData: []
-        };
-    }
-
-    async componentDidMount() {
-        const url = '/api/recipes/';
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({ recipeData: data, loading: true});
     }
 
     render() {
@@ -63,27 +53,13 @@ class BodyContent extends React.Component {
                     </div>
                     <div className="page-content">
                         <Switch>
-                            <Route path="/cookbook">
-                                <Cookbook recipeData={this.state.recipeData} loading={this.state.loading} />
-                            </Route>
-                            <Route path="/favorites">
-                                <Favorites />
-                            </Route>
-                            <Route path="/pantry">
-                                <Pantry />
-                            </Route>
-                            <Route path="/search">
-                                <Search />
-                            </Route>
-                            <Route path="/settings">
-                                <Settings />
-                            </Route>
-                            <Route path="/new-recipe">
-                                <NewRecipe />
-                            </Route>
-                            <Route path="/">
-                                <Index />
-                            </Route>
+                            <Route path="/cookbook" component={Cookbook} />
+                            <Route path="/favorites" component={Favorites} />
+                            <Route path="/pantry" component={Pantry} />
+                            <Route path="/search" component={Search} />
+                            <Route path="/settings" component={Settings} />
+                            <Route path="/new-recipe" component={NewRecipe} />
+                            <Route path="/" component={Index} />
                         </Switch>
                     </div>
                 </Router>
