@@ -1,9 +1,12 @@
 import BodyContent from './Components/BodyContent';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <div className="mainApp">
-      <BodyContent/>
+      <Router>
+        <BodyContent/>
+      </Router>
     </div>
   );
 }
